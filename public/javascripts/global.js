@@ -51,23 +51,23 @@ $(document).ready(function() {
 
 //***** API CALL FUNCTIONS *****
 function getBillUrl(bill_id) {
-    return 'https://congress.api.sunlightfoundation.com/bills?bill_id=' + bill_id + '&apikey=838cd938cfb244a7a5728083f9191152';
+    return 'https://congress.api.sunlightfoundation.com/bills?bill_id=' + bill_id + '&apikey=f5da3fb0d7b64be8b718f83d2be029e5';
 };
 
 function getCommitteeUrl(committee_id) {
-    return 'https://congress.api.sunlightfoundation.com/committees?committee_id=' + committee_id + '&apikey=838cd938cfb244a7a5728083f9191152';
+    return 'https://congress.api.sunlightfoundation.com/committees?committee_id=' + committee_id + '&apikey=f5da3fb0d7b64be8b718f83d2be029e5';
 }
 
 function getSessionUrl(congressional_session) {
-    return 'https://congress.api.sunlightfoundation.com/bills?congress=' + congressional_session + '&apikey=838cd938cfb244a7a5728083f9191152';
+    return 'https://congress.api.sunlightfoundation.com/bills?congress=' + congressional_session + '&apikey=f5da3fb0d7b64be8b718f83d2be029e5';
 }
 
 function getUpcomingUrl(){
-    return 'https://congress.api.sunlightfoundation.com/upcoming_bills?apikey=838cd938cfb244a7a5728083f9191152';
+    return 'https://congress.api.sunlightfoundation.com/upcoming_bills?apikey=f5da3fb0d7b64be8b718f83d2be029e5';
 }
 
 function getFloorUpdatesUrl(bill_id){
-    return 'https://congress.api.sunlightfoundation.com/floor_updates?bill_ids=' + bill_id + '&apikey=838cd938cfb244a7a5728083f9191152'
+    return 'https://congress.api.sunlightfoundation.com/floor_updates?bill_ids=' + bill_id + '&apikey=f5da3fb0d7b64be8b718f83d2be029e5'
 }
 
 function upcomingBillNum(object){
