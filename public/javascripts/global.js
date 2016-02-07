@@ -3,8 +3,7 @@
 //---------
 //PRE DOCUMENT-LOAD METHODS
 getBills();
-getTreeMapData();
-var points = []
+// var points = []
 
 //DOCUMENT READY METHODS
 $(document).ready(function() {

@@ -42,7 +42,7 @@ router.post('/add_bill', function(req, res) {
                 'last_action_date': req.body.last_action_date,
                 'last_version_date': req.body.last_version_date
             },
-        'history': 
+        'history':
             {
                 'active': req.body.active,
                 'active_at': req.body.active_at,
@@ -73,7 +73,7 @@ router.post('/add_bill', function(req, res) {
                 'last_action_date': req.body.last_action_date,
                 'last_version_date': req.body.last_version_date
             },
-        'history': 
+        'history':
             {
                 'active': req.body.active,
                 'active_at': req.body.active_at,
@@ -148,37 +148,37 @@ router.get('/bill_data', function(req, res) {
     };
 });
 
-router.get('/tree_data', function(req, res) {
-    var db = req.db;
-    var collection = db.get('bill_list');
-    collection.find({},{},function(e,docs){
-        if(e){
-            console.error(e);
-            res.status(401);
-            res.json({error: e});
-        } else {
-            var bill_data = graphData(docs)
-            res.json(bill_data);
-        }
-    });
+// router.get('/tree_data', function(req, res) {
+//     var db = req.db;
+//     var collection = db.get('bill_list');
+//     collection.find({},{},function(e,docs){
+//         if(e){
+//             console.error(e);
+//             res.status(401);
+//             res.json({error: e});
+//         } else {
+//             var bill_data = graphData(docs)
+//             res.json(bill_data);
+//         }
+//     });
 
-    function graphData(data) {
-        var bill_data = {}
-        if(data){
-            for (var i = 0; i < data.length; i++) {
-                var committee_name = data[i].committees.committee_name
-                if (bill_data.hasOwnProperty(committee_name)){
-                    bill_data[committee_name]++;
-                } else {
-                    bill_data[committee_name] = 1;
-                };
-            }
-        } else {
-            console.error('No data in graphData()');
-        }
-        return bill_data
-    };
-});
+//     function graphData(data) {
+//         var bill_data = {}
+//         if(data){
+//             for (var i = 0; i < data.length; i++) {
+//                 var committee_name = data[i].committees.committee_name
+//                 if (bill_data.hasOwnProperty(committee_name)){
+//                     bill_data[committee_name]++;
+//                 } else {
+//                     bill_data[committee_name] = 1;
+//                 };
+//             }
+//         } else {
+//             console.error('No data in graphData()');
+//         }
+//         return bill_data
+//     };
+// });
 
 
 
