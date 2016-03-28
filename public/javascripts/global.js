@@ -2,7 +2,8 @@
 
 //---------
 //PRE DOCUMENT-LOAD METHODS
-getBills();
+
+// getBills();
 // var points = []
 
 //DOCUMENT READY METHODS
@@ -10,38 +11,38 @@ $(document).ready(function() {
     console.log("Upcoming:");
     upcomingBillNum($);
 
-    $('#bill-by-committee').highcharts({
-        series: [{
-            type: 'treemap',
-            layoutAlgorithm: 'squarified',
-            allowDrillToNode: true,
-            dataLabels: {
-                enabled: false
-            },
-            levelIsConstant: false,
-            levels: [{
-                level: 1,
-                layoutAlgorithm: 'squarified',
-                color: 'red',
-                dataLabels: {
-                    enabled: true
-                },
-                borderWidth: 3
-            },
-            {
-                level: 2,
-                layoutAlgorithm: 'squarified',
-                color: 'blue',
-                dataLabels: {
-                    enabled: false
-                },
-            }],
-            data: points
-        }],
-        title: {
-            text: 'Bills by Committee (Per Session)'
-        }
-    });
+    // $('#bill-by-committee').highcharts({
+    //     series: [{
+    //         type: 'treemap',
+    //         layoutAlgorithm: 'squarified',
+    //         allowDrillToNode: true,
+    //         dataLabels: {
+    //             enabled: false
+    //         },
+    //         levelIsConstant: false,
+    //         levels: [{
+    //             level: 1,
+    //             layoutAlgorithm: 'squarified',
+    //             color: 'red',
+    //             dataLabels: {
+    //                 enabled: true
+    //             },
+    //             borderWidth: 3
+    //         },
+    //         {
+    //             level: 2,
+    //             layoutAlgorithm: 'squarified',
+    //             color: 'blue',
+    //             dataLabels: {
+    //                 enabled: false
+    //             },
+    //         }],
+    //         data: points
+    //     }],
+    //     title: {
+    //         text: 'Bills by Committee (Per Session)'
+    //     }
+    // });
 });
 
 
@@ -192,39 +193,39 @@ function addBill(bill) {
         url: '/bills/add_bill',
         dataType: 'JSON'
     }).done(function(response){
-        console.log(response)
+        // console.log(response)
     }).fail(function(error){
         console.log(error)
     })
 };
 
-function getTreeMapData(){
-    $.ajax({
-        type: 'GET',
-        url: '/bills/bill_list'
-    }).done(function(response){
-        var chartData = populateTreeMap(response);
-        organizeData(chartData)
-    }).fail(function(error){
-        console.log(error)
-    });
-}
+// function getTreeMapData(){
+//     $.ajax({
+//         type: 'GET',
+//         url: '/bills/bill_list'
+//     }).done(function(response){
+//         var chartData = populateTreeMap(response);
+//         organizeData(chartData)
+//     }).fail(function(error){
+//         console.log(error)
+//     });
+// }
 
-function populateTreeMap(tree_data) {
-    // console.log(tree_data)
-    var ChartData = {}
+// function populateTreeMap(tree_data) {
+//     // console.log(tree_data)
+//     var ChartData = {}
 
-    for (i = 0; i < tree_data.length; i++){
-        var treeMapData = {}
-        var innerData = {}
-        treeMapData[tree_data[i].short_title ? tree_data[i].short_title : tree_data[i].official_title] = innerData
-        innerData['url'] = '1'
-        // innerData['description'] = '1'
-        // innerData['bill_id'] = '1'
-        ChartData[tree_data[i].committees.committee_name] = treeMapData
-    }
-    return ChartData
-};
+//     for (i = 0; i < tree_data.length; i++){
+//         var treeMapData = {}
+//         var innerData = {}
+//         treeMapData[tree_data[i].short_title ? tree_data[i].short_title : tree_data[i].official_title] = innerData
+//         innerData['url'] = '1'
+//         // innerData['description'] = '1'
+//         // innerData['bill_id'] = '1'
+//         ChartData[tree_data[i].committees.committee_name] = treeMapData
+//     }
+//     return ChartData
+// };
 
 function organizeData(chartData){
     var committeeP
