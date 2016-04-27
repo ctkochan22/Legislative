@@ -1,14 +1,25 @@
 # Legislative
 Stay up to date on current bills hitting the house and senate floors
 
-### Pitch
+##Synopsis
+Legislative is an autonomous web application that graphically visualizes all the bills approaching congressional floor for debate or vote. We hoped by keeping the application highly visual, it would make it easier to grasp legislative progress quickly and profoundly.
 
-Hi my name is Nathan, and I’m from Washington, DC.
+[Link to Live Demo](http://legislative-c.herokuapp.com/)
 
-Growing up right outside of the nation’s capital, I was exposed to the importance of one’s civic duty, whether its recycling, going out to vote, or simply staying up to date on current issues.
 
-However, in order to stay informed on what our legislative branch is up to – I often rely on different media sources for what they deem important to report. 
+##How It Works
+This application uses Node.js and MongoDB, as well as the [Sunlight Labs](https://sunlightlabs.github.io/congress/) API, which gives us access to all bills and their details in almost real-time.
 
-Legislative lets you know what current bills are being discussed on the house or senate floor. Using text mining and analytics, we can derive which keywords may or may not be mentioned in upcoming bills and get a better sense of what our congress is voting on versus what the media might portray.
+As we wanted to focus on upcoming bills, we pulled all the bills scheduled to approach the floor that week and gathered additional data using the API. In order to keep it up to date, we have the application make a call to the API everytime the page is loaded.
 
-Using legislative, easily stay up to date with what your local, state, and federal government are working towards.    
+All the graphs are generated based on the data we retrieve and package.
+
+##How to Use
+
+##Obstacles
+
+##Mission and Origin
+
+
+
+
